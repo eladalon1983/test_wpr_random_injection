@@ -1,4 +1,28 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random Number Test</title>
+</head>
+
+<body>
+
+    <h1 id="random-display">0</h1>
+
+    <script>
+        // Math.random() returns a float between 0 and 1
+        const randomNumber = Math.random();
+
+        // Target the h1 and update its text
+        document.getElementById('random-display').textContent = randomNumber;
+    </script>
+
+</body>
+
+</html>
+
+<!-- <html>
 <p id="p"></p>
 <script>
   const p = document.getElementById('p');
@@ -9,4 +33,5 @@
   p.innerHTML += `<br/> ${Math.random()}`;
 </script>
 
-</html>
+</html> -->
+
