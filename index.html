@@ -1,37 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <title>Random Number Test</title>
+    <title>WPR Determinism Bypass Test</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .result {
+            font-weight: bold;
+            color: #d32f2f;
+        }
+
+        .success {
+            color: #388e3c;
+        }
+    </style>
 </head>
 
 <body>
-
-    <h1 id="random-display">0</h1>
-
-    <script>
-        // Math.random() returns a float between 0 and 1
-        const randomNumber = Math.random();
-
-        // Target the h1 and update its text
-        document.getElementById('random-display').textContent = randomNumber;
-    </script>
-
+    <h1>WPR Determinism Bypass Test</h1>
+    <p>If WPR is working correctly, <b>Direct</b> should be the same every time you replay.</p>
+    <p>If the bypasses work, <b>IFrame</b> and <b>Worker</b> will change on every page refresh during replay.</p>
+    <div id="results">
+        <p>1. Direct (Overridden): <span id="direct" class="result">loading...</span></p>
+        <p>2. IFrame (Bypass): <span id="iframe" class="result">loading...</span></p>
+        <p>3. Worker (Bypass): <span id="worker" class="result">loading...</span></p>
+    </div>
+    <script src="bypass.js"></script>
 </body>
 
 </html>
-
-<!-- <html>
-<p id="p"></p>
-<script>
-  const p = document.getElementById('p');
-  p.innerHTML += `<br/> ${Math.random()}`;
-  p.innerHTML += `<br/> ${Math.random()}`;
-  p.innerHTML += `<br/> ${Math.random()}`;
-  p.innerHTML += `<br/> ${Math.random()}`;
-  p.innerHTML += `<br/> ${Math.random()}`;
-</script>
-
-</html> -->
-
